@@ -1,0 +1,6 @@
+framework module Pods_EthSampleAppTests {
+  umbrella header "Pods-EthSampleAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
