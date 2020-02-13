@@ -11,7 +11,7 @@ Clone the repo and run it on Xcode. This app was built on Xcode Version 11.3.1 (
 
 There are two ways to run this app. 
 
-Enter your personal private key. \n
+Enter your personal private key.
 
 or
 
@@ -44,8 +44,10 @@ Link for [web3swift](https://github.com/matter-labs/web3swift)
 ## Test Cases
 I completed this during my exam week and I tried as much as I can during this hectic week to complete all the test cases but I couldn't. There are quite some test cases missing but I couldn't do much about it as I had 4 exams during the completion of this app.
 
-## Conclusion
+## About Git History
+I haven't been able to put changes on git instantly (something I always do) due to this hectic week.
 
+## Conclusion
 Please let me know my mistakes as I feel I have a lot to improve and I am always learning to improve myself.
 
 
