@@ -15,7 +15,7 @@ class SetupViewModel
     private var pkKey : Data?
     init(_ title : String){
         self.title = title
-        self.testAccount()
+//        self.testAccount()
     }
     
     func getTitle()->String{
