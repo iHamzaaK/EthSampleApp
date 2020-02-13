@@ -10,10 +10,20 @@ import UIKit
 
 class SignatureViewController: UIViewController
 {
-  // MARK: View lifecycle
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-  }
-  
+    @IBOutlet weak var imgQRView: UIImageView!
+    @IBOutlet weak var lblMessage : UILabel!
+    var viewModel : SignatureViewModel!
+    // MARK: View lifecycle
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        self.setupView()
+    }
+}
+// MARK: Custom Functions
+extension SignatureViewController{
+    private func setupView(){
+        self.title = self.viewModel.getTitle()
+        self.imgQRView.image = self.viewModel.getImage()
+        self.lblMessage.text = self.viewModel.getMessage()
+    }
 }

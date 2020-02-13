@@ -8,16 +8,12 @@
 
 import UIKit
 
-protocol SignatureBusinessLogic
+class SignatureBuilder
 {
-  func doSomething(request: Signature.Something.Request)
-}
-
-
-
-class SignatureBuilder: SignatureBusinessLogic
-{
-    func build()-> UIViewController{
-        
+    static func build(_ img : UIImage, msg : String)-> SignatureViewController{
+        let sb = Utility.getStoryboard(sbName: Storyboards.main.getStoryboardName())
+        let vc = sb.instantiateViewController(identifier: Controllers.signature.getIdentifier()) as! SignatureViewController
+        vc.viewModel = SignatureViewModel(Controllers.verification.getNavigationBarTitle(), img, msg: msg)
+        return vc
     }
 }

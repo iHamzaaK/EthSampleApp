@@ -8,16 +8,14 @@
 
 import UIKit
 
-protocol SetupBusinessLogic
+
+
+class SetupBuilder
 {
-  func doSomething(request: Setup.Something.Request)
-}
-
-
-
-class SetupBuilder: SetupBusinessLogic
-{
-    func build()-> UIViewController{
-        
+    static func build()-> SetupViewController{
+        let sb = Utility.getStoryboard(sbName: Storyboards.main.getStoryboardName())
+        let vc = sb.instantiateViewController(identifier: Controllers.setup.getIdentifier()) as! SetupViewController
+        vc.viewModel = SetupViewModel(Controllers.setup.getNavigationBarTitle())
+        return vc
     }
 }

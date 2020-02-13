@@ -7,17 +7,12 @@
 
 
 import UIKit
-
-protocol SigningBusinessLogic
+class SigningBuilder
 {
-  func doSomething(request: Signing.Something.Request)
-}
-
-
-
-class SigningBuilder: SigningBusinessLogic
-{
-    func build()-> UIViewController{
-        
+    static func build(wallet : Wallet)-> SigningViewController{
+        let sb = Utility.getStoryboard(sbName: Storyboards.main.getStoryboardName())
+        let vc = sb.instantiateViewController(identifier: Controllers.signing.getIdentifier()) as! SigningViewController
+        vc.viewModel = SigningViewModel(Controllers.signing.getNavigationBarTitle(), wallet)
+        return vc
     }
 }

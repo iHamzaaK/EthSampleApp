@@ -7,17 +7,12 @@
 
 
 import UIKit
-
-protocol QRScannerBusinessLogic
+class QRScannerBuilder
 {
-  func doSomething(request: QRScanner.Something.Request)
-}
-
-
-
-class QRScannerBuilder: QRScannerBusinessLogic
-{
-    func build()-> UIViewController{
-        
+    static func build(signature : Data, wallet : Wallet)-> QRScannerViewController{
+        let sb = Utility.getStoryboard(sbName: Storyboards.main.getStoryboardName())
+        let vc = sb.instantiateViewController(identifier: Controllers.qrscanner.getIdentifier()) as! QRScannerViewController
+        vc.viewModel = QRScannerViewModel(Controllers.qrscanner.getNavigationBarTitle(), wallet, verificationData: signature)
+        return vc
     }
 }

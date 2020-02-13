@@ -7,17 +7,13 @@
 
 
 import UIKit
-
-protocol AccountBusinessLogic
+class AccountBuilder
 {
-  func doSomething(request: Account.Something.Request)
-}
-
-
-
-class AccountBuilder: AccountBusinessLogic
-{
-    func build()-> UIViewController{
-        
+    static func build(wallet : Wallet)-> AccountViewController{
+        let sb = Utility.getStoryboard(sbName: Storyboards.main.getStoryboardName())
+        let vc = sb.instantiateViewController(identifier: Controllers.account.getIdentifier()) as! AccountViewController
+        let repo = BalanceRepoImplementation()
+        vc.viewModel = AccountViewModel(Controllers.account.getNavigationBarTitle(), wallet: wallet, repo : repo)
+        return vc
     }
 }

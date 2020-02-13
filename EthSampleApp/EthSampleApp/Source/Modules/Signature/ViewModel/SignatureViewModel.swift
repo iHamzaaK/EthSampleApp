@@ -10,7 +10,23 @@ import UIKit
 
 class SignatureViewModel
 {
-    init(){
-        
+    private var title : String!
+    private var img : UIImage!
+    private var msg : String
+    init(_ title : String, _ img : UIImage, msg : String){
+        self.title = title
+        self.img = img
+        self.msg = msg
     }
+    
+    func getTitle()->String{
+        return title
+    }
+    func getImage()->UIImage{
+        return img
+    }
+    func getMessage()->String{
+        return "\(Constants.messageLabel) \(msg)"
+    }
+    
 }
